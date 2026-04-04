@@ -1189,8 +1189,6 @@ footer{background:var(--ink);padding:52px 0 26px;border-top:1px solid var(--bord
 function showLegal(section) {
   const overlay = document.getElementById('legalOverlay');
   overlay.classList.add('open');
-  const overlay = document.getElementById('legalOverlay');
-  overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
   document.querySelectorAll('.legal-tab').forEach(function(t) { t.classList.remove('active'); });
   document.getElementById('tab-' + section).classList.add('active');
