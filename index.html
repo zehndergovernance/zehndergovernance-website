@@ -1081,7 +1081,7 @@ footer{background:var(--ink);padding:52px 0 26px;border-top:1px solid var(--bord
       <!-- ════ DATENSCHUTZ ════ -->
       <div class="legal-section" id="sec-datenschutz">
         <h2>Datenschutzerklärung</h2>
-        <p style="color:rgba(255,255,255,.3);font-size:12px;">Stand: März 2026 · Version 2.0</p>
+        <p style="color:rgba(255,255,255,.3);font-size:12px;">Stand: Mai 2026 · Version 2.1</p>
 
         <h3>Verantwortliche Stelle</h3>
         <p><strong>Alex Zehnder (Zehnder Governance)</strong><br>Kehlenstrasse 19, 5712 Beinwil am See, Schweiz<br><a href="mailto:zehndergovernance@gmail.com">zehndergovernance@gmail.com</a> · www.zehndergovernance.com</p>
@@ -1103,11 +1103,15 @@ footer{background:var(--ink);padding:52px 0 26px;border-top:1px solid var(--bord
         <h4>Compliance Navigator & Flatrate (kostenpflichtig)</h4>
         <p>Name, E-Mail, Unternehmensangaben, Zahlungsdaten (via Stripe — Zehnder Governance speichert keine Kreditkartendaten). <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung). <strong>Speicherdauer:</strong> 10 Jahre für Rechnungsunterlagen (gesetzliche Pflicht).</p>
 
+        <h4>Datei-Zugriffs-Protokoll (DSGVO-Audit-Log)</h4>
+        <p>User-ID, Datei-ID, Zeitstempel, Aktion (granted/denied/stream_media), HTTP-Status. <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung — Nachweispflicht aus Art. 5 Abs. 2 DSGVO). <strong>Speicherdauer:</strong> 12 Monate. <strong>Zweck:</strong> Nachweis ordnungsgemässer Verarbeitung gegenüber Aufsichtsbehörden, Auskunft auf Antrag (Art. 15 DSGVO).</p>
+
         <h3>Eingesetzte Auftragsverarbeiter</h3>
         <ul>
           <li><strong>Wix.com Ltd.</strong> (Israel) — Website-Betrieb, Membership-Verwaltung, Zahlungsabwicklung</li>
           <li><strong>Stripe Payments Europe Ltd.</strong> (Irland) — Zahlungsverarbeitung</li>
-          <li><strong>Supabase Inc.</strong> (USA, Server: Frankfurt/EU) — verschlüsselte Datenbankverarbeitung</li>
+          <li><strong>Supabase Inc.</strong> (USA, Server: Frankfurt/EU) — verschlüsselte Datenbankverarbeitung. Eingesetzte Edge Functions: <code>check-access</code> (Authentifizierung), <code>drive-proxy</code> (Datei-Streaming), <code>smooth-processor</code> (Stripe-Cancel/Refund-Verarbeitung), <code>stripe-webhook</code> (Stripe-Subscription-Verarbeitung). Datenfluss pro Function dokumentiert in technischer Datenschutzdokumentation (auf Anfrage).</li>
+          <li><strong>Google LLC</strong> (USA) — Datei-Hosting + DSGVO-Audit-Log via Service-Account-Authentifizierung. Datenfluss: Kunde → drive-proxy Edge Function → Google Drive API → verschlüsselter Stream zurück. Keine direkten Google-Cookies oder -Tracking.</li>
           <li><strong>Brevo / Sendinblue SAS</strong> (Frankreich) — E-Mail-Kommunikation</li>
           <li><strong>Tally Solutions SRL</strong> (Belgien) — Formularverarbeitung</li>
           <li><strong>Vercel Inc.</strong> (USA) — Web-Hosting von Teilbereichen der Plattform</li>
@@ -1132,7 +1136,7 @@ footer{background:var(--ink);padding:52px 0 26px;border-top:1px solid var(--bord
       <!-- ════ AGB ════ -->
       <div class="legal-section" id="sec-agb">
         <h2>Allgemeine Geschäftsbedingungen</h2>
-        <p style="color:rgba(255,255,255,.3);font-size:12px;">Stand: März 2026 · Version 2.0 · Zehnder Governance, Alex Zehnder, Kehlenstrasse 19, 5712 Beinwil am See</p>
+        <p style="color:rgba(255,255,255,.3);font-size:12px;">Stand: Mai 2026 · Version 2.1 · Zehnder Governance, Alex Zehnder, Kehlenstrasse 19, 5712 Beinwil am See</p>
 
         <h3>§ 1 Geltungsbereich</h3>
         <p>Diese AGB gelten für alle Leistungen von Alex Zehnder (Zehnder Governance) über www.zehndergovernance.com. Vertragspartner sind ausschliesslich Unternehmen und selbstständig tätige Personen (B2B). Verbraucher-Schutzvorschriften des jeweiligen Wohnsitzlandes bleiben vorbehalten.</p>
@@ -1140,11 +1144,12 @@ footer{background:var(--ink);padding:52px 0 26px;border-top:1px solid var(--bord
         <h3>§ 2 Leistungen und ihr Charakter</h3>
         <h4>Automatisierte Tools (keine Rechtsberatung)</h4>
         <p>AI Impact Tracker (kostenlos), Compliance Navigator (CHF 490), Compliance Flatrate Standard (CHF 149/Mt), Flatrate Enterprise (CHF 299/Mt), Transfer Impact Modul (CHF 299 einmalig), Regulatory Radar (CHF 199/Jahr) sind automatisierte digitale Arbeitshilfen. Sie stellen <strong>ausdrücklich keine Rechtsberatung dar</strong>, begründen kein Mandatsverhältnis und ersetzen nicht die individuelle juristische Prüfung. Die bereitgestellten Vorlagen sind Arbeitshilfen; der Kunde ist selbst für deren Eignung verantwortlich.</p>
+        <p><strong>Hinweis zur KI-gestützten Verarbeitung:</strong> Der AI Impact Tracker und der Compliance Navigator nutzen Large Language Models (LLMs) zur strukturierten Auswertung der Eingabedaten. Die Bewertungen erfolgen nach festgelegten Regelwerken (54-Regel-Engine im Navigator) und sind reproduzierbar. Es findet keine eigenständige Entscheidung mit rechtlicher Wirkung im Sinne von Art. 22 DSGVO statt — die Ergebnisse dienen ausschliesslich der Entscheidungsunterstützung. Eine Kopie der konkret angewandten Regelwerke kann auf Anfrage bereitgestellt werden.</p>
         <h4>Individuelle Beratungsmandate</h4>
         <p>Review-Call (CHF 200), Legal Opinion (CHF 1'200), DPO-as-a-Service (CHF 950/Mt) sind eigenständige Mandate auf Basis separater Vereinbarungen. Diese werden auf Basis separater schriftlicher Mandatsvereinbarungen erbracht.</p>
 
         <h3>§ 3 Zahlungsbedingungen</h3>
-        <p>Alle Preise in CHF, zzgl. MwSt. soweit anfallend. Zahlung via Stripe (Kreditkarte, SEPA). Abonnements: monatliche Abrechnung im Voraus, automatische Erneuerung. Kündigung: 30 Tage zum Periodenende per E-Mail.</p>
+        <p>Alle Preise in CHF, zzgl. MwSt. soweit anfallend. Zahlung via Stripe (Kreditkarte, SEPA). Abonnements: monatliche/jährliche Abrechnung im Voraus, automatische Erneuerung. Kündigung: zum Ende der jeweils aktuellen Abrechnungsperiode per E-Mail (zehndergovernance@gmail.com) oder via Self-Service über das Compliance Portal. Bei mehreren gleichzeitigen Abonnements (z.B. Standard + Navigator) kann jedes Abonnement separat gekündigt werden — die Kündigung eines Abos berührt andere aktive Abonnements nicht. Rückerstattungen bei vorzeitiger Kündigung werden anteilig nicht gewährt; bei Stripe-Refunds erfolgt automatischer Zugangsentzug zum betroffenen Abo.</p>
 
         <h3>§ 4 Nutzungsrechte</h3>
         <p>Nicht-exklusives, nicht übertragbares Nutzungsrecht an Vorlagen und Tools, beschränkt auf Vertragsdauer. Verwendung für interne Zwecke des Kundenunternehmens. Weitergabe an Dritte ohne schriftliche Genehmigung untersagt.</p>
