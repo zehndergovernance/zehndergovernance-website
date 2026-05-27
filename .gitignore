@@ -1,0 +1,10 @@
+# Lokale Backup-Dateien (vor strukturellen Edits)
+*.backup-*
+*.bak
+*.orig
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
