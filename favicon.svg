@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Zehnder Governance">
+  <rect width="64" height="64" rx="13" fill="#0b1f12"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="11.5" fill="none" stroke="#c08c28" stroke-opacity="0.35" stroke-width="1.5"/>
+  <text x="32" y="45" font-family="Georgia, 'Cormorant Garamond', 'Times New Roman', serif" font-size="42" font-weight="700" fill="#c08c28" text-anchor="middle">Z</text>
+</svg>
