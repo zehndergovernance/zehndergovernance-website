@@ -1357,9 +1357,10 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
       } catch (e) { /* localStorage blocked → fallback: banner per session-only */ }
       // [Tag 25 Bug 4] Server-seitiger Einwilligungs-Nachweis (Art. 7 DSGVO) — fire-and-forget, blockiert den Banner nie.
       try {
+        var ZG_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqdmRteWp1cXRjaHpubGhmZnpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzNTkzNDksImV4cCI6MjA4NjkzNTM0OX0.iJWzPFxAI-ms7qCD6s0-Sxuqksy0ix1X-l1uNmxCZu0';
         fetch('https://rjvdmyjuqtchznlhffzo.supabase.co/functions/v1/consent-logger', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'apikey': ZG_ANON, 'Authorization': 'Bearer ' + ZG_ANON },
           body: JSON.stringify({ user_agent: navigator.userAgent, consent_version: KEY, page_url: location.href }),
           keepalive: true
         }).catch(function () {});
